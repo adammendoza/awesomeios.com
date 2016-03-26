@@ -4,16 +4,25 @@ deps-install:
 
 .PHONY: deps
 deps:
-	@swift build
-	@rm -rf Packages/*/Tests
+	@swiftenv local DEVELOPMENT-SNAPSHOT-2016-02-08-a
 	@swift build
 
-.PHONY: run
-run:
-	@./build
+.PHONY: run-dev
+run-dev:
+	@swift build --clean
+	@swift build --configuration debug
 	@echo "Running..."
-	@.build/debug/App
-  
+	@.build/debug/awesomeiosdotcom
+
+.PHONY: run-prod
+run-prod:
+	@swift build --clean
+	@swift build --configuration release
+	@echo "Running..."
+	@.build/release/awesomeiosdotcom
+
+
 .PHONY: clean
 clean:
-	@rm -r .build/
+	@swift build --clean
+	@rm -rf Packages/

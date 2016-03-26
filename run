@@ -1,5 +1,0 @@
-#!/bin/sh
-
-./build
-echo "Running..."
-.build/debug/App

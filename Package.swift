@@ -1,16 +1,8 @@
 import PackageDescription
 
 let package = Package(
-    name: "awesomeios",
+    name: "awesomeiosdotcom",
     dependencies: [
-        .Package(url: "https://github.com/qutheory/vapor.git", majorVersion: 0),
-        .Package(url: "https://github.com/qutheory/vapor-stencil.git", majorVersion: 0)
-    ],
-    exclude: [
-        "Deploy",
-        "Public",
-        "Resources",
-		"Tests",
-		"Database"
+        .Package(url: "https://github.com/Zewo/zewo.git", majorVersion: 0, minor: 3)
     ]
 )

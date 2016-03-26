@@ -1,8 +1,0 @@
-#!/bin/sh
-
-echo "Downloading dependencies..."
-swift build
-echo "Fixing SPM bug..."
-rm -rf Packages/*/Tests
-echo "Building..."
-swift build
